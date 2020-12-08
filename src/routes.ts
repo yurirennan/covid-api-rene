@@ -243,10 +243,6 @@ routes.get("/correlacao", (request: Request, response: Response) => {
 
     resposta["Valor da Correlação"] = VectorMath.PearsonCorrelationCoefficient(vetor1, vetor2).toFixed(4);
 
-    if (resposta["Valor da Correlação"] == 0) {
-        return response.status(404).json({ message: "Not Found!" });
-    }
-
     return response.json(resposta);
 });
 
